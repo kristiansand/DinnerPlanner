@@ -1,0 +1,10 @@
+var string_appName = "StoreMaps";
+
+var string_you_are_in = "You are in";
+var string_what_do_you_want_to_do = "What do you want to do?";
+
+//Error messages
+var string_city_not_supported = "This city is not yet supported";
+
+//keys
+var googe_maps_api_key = "AIzaSyDA8PsBN2OiLds14mCOrtmCe3eJdSXjQCw";
