@@ -5,7 +5,10 @@ var marker;
           center: kristiansand,
           zoom: 15
         };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
+        var mapdiv = document.getElementById('map-canvas');
+          mapdiv.style.width = '100%';
+    mapdiv.style.height = '70%';
+        var map = new google.maps.Map(mapdiv,
             mapOptions);
         if(place){
             var placeLocation;
