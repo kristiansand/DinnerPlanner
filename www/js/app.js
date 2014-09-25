@@ -8,7 +8,8 @@
 angular
   .module('app', [
     'ui.router',
-    'mm.foundation'
+    'mm.foundation',
+    'mm.foundation.offcanvas'
   ])
   .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
@@ -29,6 +30,3 @@ angular
         $(document).foundation();
     });
   })
-  .controller('TopBarCtrl', ['$scope', function($scope) {
-
-  }])

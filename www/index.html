@@ -24,12 +24,48 @@
     
         
         <div class="container">
-            <header ng-include="'templates/nav.html'"></header>
-            <br /><br />
-            <!-- CONTENT -->
-            <div ui-view> </div>
-            <br /><br />
-            <footer ng-include="'templates/footer.html'"></footer>
+            
+            <div class="off-canvas-wrap">
+                <div class="inner-wrap">
+                    <nav class="tab-bar">
+                        <section class="left-small">
+                            <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+                        </section>
+
+                        <section class="middle tab-bar-section">
+                            <h1 class="title">DinnerPlanner</h1>
+                        </section>
+
+                        <section class="right-small">
+                            <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+                        </section>
+
+                    </nav>
+
+                    <aside class="left-off-canvas-menu">
+                        <ul class="off-canvas-list">
+                            <li><a href="#">Menu</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="right-off-canvas-menu">
+                        <ul class="off-canvas-list">
+                            <li><a href="#">Right Sidebar</a></li>
+                        </ul>
+                    </aside>
+                    <section class="main-section">
+                        <div class="small-12 columns" style="height: 95vh;">
+                            
+                            <br />
+                            <!-- MAIN CONTENT -->
+                            <div ui-view> </div>
+                            <!-- MAIN CONTENT -->
+                            
+                        </div>
+                    </section>
+
+                    <a class="exit-off-canvas"></a>
+                </div>
+            </div>
         </div>
         
         
@@ -57,7 +93,6 @@
         <!-- CUSTOM/IN-HOUSE SCRIPTS -->
         <script type="text/javascript" src="js/vendor/stackoverflows.js"></script>
         <script type="text/javascript" src="js/in-house/error.js"></script>
-        <script src="phonegap.js"></script>
 
         <script>
             //if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
