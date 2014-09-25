@@ -17,3 +17,8 @@ angular
         controller: 'aboutCtrl'
       })
   }])
+  .run(function($rootScope) {
+        $rootScope.$on('$viewContentLoaded', function () {
+        $(document).foundation();
+    });
+  });
