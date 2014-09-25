@@ -1,0 +1,30 @@
+<!-- Navigation -->
+<div ng-controller="TopBarCtrl">
+  <top-bar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a ui-sref="home">StoreMaps</a></h1>
+      </li>
+      <li toggle-top-bar class="menu-icon"><a ui-sref="home">Menu</a></li>
+    </ul>
+
+    <top-bar-section>
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a ui-sref="about">Contact us</a></li>
+        <li has-dropdown>
+          <a ui-sref="about">Businesses</a>
+          <ul top-bar-dropdown>
+            <li><a ui-sref="about">Pricing</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a ui-sref="about">About us</a></li>
+      </ul>
+    </top-bar-section>
+  </top-bar>
+</div>
+<!-- Navigation END -->
