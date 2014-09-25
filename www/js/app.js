@@ -8,7 +8,6 @@
 angular
   .module('app', [
     'ui.router',
-    'google-maps',
     'mm.foundation'
   ])
   .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
