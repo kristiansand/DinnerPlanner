@@ -1,0 +1,23 @@
+<div class="row" class="checkboxes">
+  	<div class="small-12 columns">
+	  	<ul class="checkboxes">
+		  	<li><label class="checkbox"><input type="checkbox"> Meat</label></li>
+		  	<li><label class="checkbox"><input type="checkbox"> Vegetables</label></li>
+		  	<li><label class="checkbox"><input type="checkbox"> Sides</label></li>
+	  	</ul>
+  	</div>
+</div>
+
+
+
+<hr />
+
+
+<br />
+<div class="row">
+	<div class="small-12 columns">
+		<slick class="slider single-item" id="slick-slider" current-index="index" responsive="breakpoints" slides-to-show=3 slides-to-scroll=3 ng-controller="SlickCtrl" dots=true centerMode=true>
+			<div ng-repeat="picture in pictures"><img src="/images/{{picture}}"></img></div>
+		</slick>
+	</div>
+</div>

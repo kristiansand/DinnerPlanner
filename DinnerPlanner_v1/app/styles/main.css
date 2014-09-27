@@ -1,0 +1,53 @@
+/*
+* Main stylesheet for application
+* @author Martin Othamar <martin@othamar.net>
+* @version 140926
+*/
+
+/* SET PAGE DIMENSIONS  */
+body,html{
+    height:100%;
+    width:100%;
+}
+.off-canvas-wrap,.inner-wrap{
+    height:100%;   
+}
+.off-canvas-wrap {
+	overflow-y: auto;
+}
+.page{
+    height:100%;   
+}
+
+
+/* MAIN VIEW CHECKBOXES */
+ul.checkboxes {
+	list-style-type: none; 
+	text-align: center;
+}
+.checkboxes li {
+	display: inline-block;
+}
+
+
+/* MAIN VIEW SLIDER */
+#slick-slider {
+}
+.slick-prev:before, .slick-next:before {
+	color: black;
+}
+.slick-track div {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.slick-track img {
+	border:1px solid #;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;  
+}
+.slick-track img:hover {
+	-moz-box-shadow: 0 0 30px black;
+	-webkit-box-shadow: 0 0 30px black;
+	box-shadow: 0 0 30px black;
+}
