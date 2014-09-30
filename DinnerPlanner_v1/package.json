@@ -2,7 +2,10 @@
   "name": "DinnerPlanner",
   "author": "Group7",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "tiny-lr-fork": "0.0.5"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
