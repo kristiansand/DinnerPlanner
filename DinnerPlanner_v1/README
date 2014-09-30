@@ -1,0 +1,11 @@
+
+
+Getting started with development;
+	1. Install NVM using curl "https://raw.githubusercontent.com/creationix/nvm/v0.17.2/install.sh | bash"
+	2. Use "nvm ls-remote" to get latest version of NodeJS/NPM for dependency management in our project
+	3. Use "nvm install versionnumber" to install latest version (Currently v0.11.14)
+	4. Use "nvm alias default versionnumber" to automatically load version when opening bash/term
+	5. Install relevant packages by; "npm install -g yo grunt-cli bower generator-angular" (-g for globally)
+	6. Clone Git repository
+	7. Use "npm install" to install all dependencies to node_modules (From project root directory)
+	8. "grunt serve" to boot up application
