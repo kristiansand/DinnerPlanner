@@ -20,5 +20,11 @@ angular
                 FastClick.attach(document.body);
             });
 	        $(document).foundation();
+				
+			$(".previous").click(function(e){
+				e.preventDefault();
+				return false;
+			});	
+			
     	});
 	});

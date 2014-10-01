@@ -32,7 +32,8 @@ body,html{
 
 /* NAVBAR PREVIOUSBUTTON STYLESHEET */
 .previous a {
-	opacity: 0.2
+	opacity: 0.2;
+	cursor: default;
 }
 
 
