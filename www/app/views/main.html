@@ -1,5 +1,5 @@
 <div class="row" class="checkboxes">
-  	<div class="small-12 columns">
+  	<div class="large-12 columns">
 	  	<ul class="checkboxes">
 		  	<li><label class="checkbox"><input type="checkbox"> Meat</label></li>
 		  	<li><label class="checkbox"><input type="checkbox"> Vegetables</label></li>
@@ -14,10 +14,17 @@
 
 
 <br />
-<div class="row">
-	<div class="small-12 columns">
-		<slick class="slider single-item" id="slick-slider" current-index="index" responsive="breakpoints" slides-to-show=3 slides-to-scroll=3 ng-controller="SlickCtrl" dots=true centerMode=true>
-			<div ng-repeat="picture in pictures"><img src="/images/{{picture}}"></img></div>
+<div class="row fullWidth">
+	<div class="large-12 columns">
+		<slick class="slider single-item" id="slick-slider" current-index="index" responsive="breakpoints" slides-to-show=5 slides-to-scroll=5 ng-controller="SlickCtrl" dots=true centerMode=true>
+			<div class="slide-container" ng-repeat="picture in pictures">
+				<p class="panel dinnerTitle">Matrett</p>
+				<div class="overlay-container">
+					<img class="dinnerImage" src="/images/{{picture}}"></img>
+					<div class="overlay">+</div>
+				</div>
+				<p class="panel dinnerDescription">Beskrivelse av matretten?</p>
+			</div>
 		</slick>
 	</div>
 </div>

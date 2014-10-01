@@ -21,7 +21,16 @@ angular.module('angularjsApp')
 		'oppskrift3.jpg',
 		'oppskrift4.jpg',
 		'oppskrift5.jpg',
-		'oppskrift6.jpg'
+		'oppskrift6.jpg',
+		'oppskrift7.jpg',
+		'oppskrift8.jpg',
+		'oppskrift9.jpg',
+		'oppskrift10.jpg',
+		'oppskrift11.jpg',
+		'oppskrift12.jpg',
+		'oppskrift13.jpg',
+		'oppskrift14.jpg',
+		'oppskrift15.jpg'
 	];
 	
     $scope.breakpoints = [
