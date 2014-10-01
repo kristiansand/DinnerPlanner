@@ -97,3 +97,18 @@ ul.checkboxes {
 .dinnerTitle {
 	margin-bottom: 0px;
 }
+
+
+/* CHECKBOXES */
+.checkboxFoodCategories input[type="checkbox"] {
+    display: none;
+}
+.checkboxFoodCategories input[type="checkbox"]+label {    
+    background: url('http://renegadeox.com/img/off.png') no-repeat;
+    height:17px;
+    padding-left: 18px;
+}
+.checkboxFoodCategories input[type="checkbox"]:checked + label {
+    background: url('http://renegadeox.com/img/on.png')  no-repeat;
+    height:17px;
+}
