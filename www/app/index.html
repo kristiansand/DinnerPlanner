@@ -1,9 +1,12 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="nb">
     <head>
         <meta charset="utf-8">
         <title>DinnerPlanner</title>
-        <meta name="description" content="">
+		<meta name="application-name" content="DinnerPlanner" />
+		<meta name="author" content="Group7" />
+        <meta name="description" content="DinnerPlanner - Vi gjør det lett å planegge middag!">
+		<meta name="keywords" content="meta tags,search engine optimization" />
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.) styles/vendor.css -->
@@ -26,43 +29,43 @@
     <!-- Add your site or application content here -->
       
         <div class="page">
-            <div class="off-canvas-wrap">
-                <div class="inner-wrap">
-                    <nav class="tab-bar">
-                        <section class="left-small">
-                            <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-                        </section>
+			
+			<div >
+				<top-bar>
+					<ul class="title-area">
+						  <li class="name">
+								<h1><a href="#">DinnerPlanner</a></h1>
+						  </li>
+						  <li toggle-top-bar class="menu-icon"><a href="#">Menu</a></li>
+					</ul>
 
-                        <section class="middle tab-bar-section">
-                            <h1 class="title">Dinnerplanner</h1>
-                        </section>
+					<top-bar-section>
+						<!-- Right Nav Section -->
+						<ul class="right">
+							<li class="divider previous"></li>
+							<li class="previous"><a href="#" title="Previous">&lt;</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Handleliste</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Print ut</a></li>
+							<li class="divider"></li>
+						</ul>
 
-                    </nav>
+						<!-- Left Nav Section -->
+						<ul class="left">
+							<li><a href="#">Om oss</a></li>
+						</ul>
+					</top-bar-section>
+				</top-bar>
+			</div>
 
-                    
-                    <aside class="left-off-canvas-menu">
-                        <ul class="off-canvas-list">
-                            <li><label>Main Menu</label></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Pricing</a></li>
-                        </ul>
-                    </aside>
-
-                    <section class="main-section" >
-						<div class="small-12 columns">
-
-
-                            <br /><br />
-                            <!-- CONTENT/VIEW -->
-                            <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+			
+			
+			<br /><br />
+			<!-- CONTENT/VIEW -->
+			<div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
 
 
-                        </div>
-                    </section>
-                    <a class="exit-off-canvas"></a>
-                </div>
-            </div>
         </div>
 
 
