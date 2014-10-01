@@ -7,5 +7,9 @@ Getting started with development;
 	4. Use "nvm alias default versionnumber" to automatically load version when opening bash/term
 	5. Install relevant packages by; "npm install -g yo grunt-cli bower generator-angular" (-g for globally)
 	6. Clone Git repository
-	7. Use "npm install" to install all dependencies to node_modules (From project root directory)
-	8. "grunt serve" to boot up application
+	7. Use "npm install" to install all dependencies to node_modules (From project www-directory)
+	8. USe "bower install" to install runtime dependencies to bower_components  (From project www-directory)
+	9. Both nodemodules and bowercomponents are git ignored, dependencies are managed by Bower and NPM locally.
+	10. "grunt test" to launch tests. (Gruntfile.js has information about the task, tests folder for the actual tests)
+	11. "grunt serve" to boot up application
+	12. "grunt build" to build application for production (Minified, etc)

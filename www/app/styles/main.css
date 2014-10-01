@@ -31,8 +31,8 @@ body,html{
 
 
 /* NAVBAR PREVIOUSBUTTON STYLESHEET */
-.previous {
-	display: none;
+.previous a {
+	opacity: 0.2
 }
 
 
