@@ -2,6 +2,10 @@
   "name": "DinnerPlanner",
   "author": "Group7",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kristiansand/DinnerPlanner"
+  },
   "dependencies": {
     "jquery": "^2.1.1",
     "lodash": "^2.4.1",
