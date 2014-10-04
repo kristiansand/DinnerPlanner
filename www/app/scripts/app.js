@@ -8,17 +8,28 @@
  *
  * Main module of the application.
  */
-angular
-  	.module('angularjsApp', [
+var app = angular.module('angularjsApp', [
 	    'mm.foundation',
 	    'ngRoute',
-	    'slick'
-	])
-	.run(function($rootScope) {
+	    'slick',
+        'ngCookies'
+	]);
+
+app.run(function($rootScope) {
+            parseInitialize();
 	        $rootScope.$on('$viewContentLoaded', function () {
         	$(function() {
                 FastClick.attach(document.body);
             });
 	        $(document).foundation();
     	});
+        
+        $rootScope.isLoggedIn = function(){
+            return false;
+        }
+        
 	});
+
+function parseInitialize(){
+    Parse.initialize("KJ7VlLWVQDlpbksXpY4cCgJRWq0jzl8HlXodhRJm", "oOTlG5iSxkBTzIraN6OJuFdPGYhOvcrKM2wVrdhF");   
+}

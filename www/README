@@ -8,4 +8,7 @@ Getting started with development;
 	5. Install relevant packages by; "npm install -g yo grunt-cli bower generator-angular" (-g for globally)
 	6. Clone Git repository
 	7. Use "npm install" to install all dependencies to node_modules (From project root directory)
-	8. "grunt serve" to boot up application
+	8. "grunt serve" to boot up applicatio
+
+bower install angular-cookies
+n

@@ -62,8 +62,8 @@
 			
 			
 			<br /><br />
-			<!-- CONTENT/VIEW -->
-			<div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+			<!-- CONTENT -->
+            <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
 
 
         </div>
@@ -100,6 +100,8 @@
         <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
         <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
         <script src="bower_components/foundation/js/foundation.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -110,7 +112,10 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/storeLogin.js"></script>
         <script src="scripts/controllers/slick.js"></script>
+        <script src="scripts/plugins/parse.js"></script>
+        
         <!-- endbuild -->
         <script>
         </script>
