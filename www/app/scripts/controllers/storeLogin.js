@@ -19,7 +19,7 @@ angular.module('angularjsApp')
       $scope.usernameStr = "Username";
       $scope.passwordStr = "Password";
         
-    console.log($cookieStore.get("test"));
+    console.log($cookieStore.get("store"));
       
       $scope.logIn = function(){
           var username = document.getElementById("username").value;
@@ -27,7 +27,7 @@ angular.module('angularjsApp')
             if(username.length > 0 && password.length > 0){
                 Parse.User.logIn(username, password, {
                   success: function(user) {
-                    $cookieStore.put("test", user.get("store"));
+                    $cookieStore.put("store", user.get("store").id);
                   },
                   error: function(user, error) {
                     alert("Du er ikke logget inn!");

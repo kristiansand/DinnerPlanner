@@ -15,7 +15,7 @@ var app = angular.module('angularjsApp', [
         'ngCookies'
 	]);
 
-app.run(function($rootScope) {
+app.run(function($rootScope, $cookies, $cookieStore) {
             parseInitialize();
 	        $rootScope.$on('$viewContentLoaded', function () {
         	$(function() {
@@ -23,6 +23,27 @@ app.run(function($rootScope) {
             });
 	        $(document).foundation();
     	});
+        $rootScope.title = "DinnerPlanner";
+    
+        $rootScope.selectStoreBranding = function(){
+            var storeCookie = $cookieStore.get("store");
+            // Rema 1000
+            if(storeCookie === "Dvjkwy8fec"){
+                $rootScope.title += " Rema 1000";
+                document.body.style.background = '#004a93';
+            }
+            // Kiwi
+            else if(storeCookie === "phlvMiXLfG"){
+                $rootScope.title += " Kiwi";
+                document.body.style.background = '#84c115';
+            }
+            else{
+                console.log("error: " + storeCookie);   
+            }
+        }
+        
+        
+        $rootScope.selectStoreBranding();
         
         $rootScope.isLoggedIn = function(){
             return true;
