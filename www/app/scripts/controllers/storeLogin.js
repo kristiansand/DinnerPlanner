@@ -8,7 +8,7 @@
  * Controller of the angularjsApp
  */
 angular.module('angularjsApp')
-  .controller('StoreLoginCtrl', function ($scope, $cookies, $cookieStore) {
+  .controller('StoreLoginCtrl', function ($scope, $cookies, $cookieStore, $location) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -19,7 +19,7 @@ angular.module('angularjsApp')
       $scope.usernameStr = "Username";
       $scope.passwordStr = "Password";
         
-    console.log($cookieStore.get("store"));
+	console.log($cookieStore.get("store"));
       
       $scope.logIn = function(){
           var username = document.getElementById("username").value;
@@ -28,6 +28,7 @@ angular.module('angularjsApp')
                 Parse.User.logIn(username, password, {
                   success: function(user) {
                     $cookieStore.put("store", user.get("store").id);
+					$location.path("#");
                   },
                   error: function(user, error) {
                     alert("Du er ikke logget inn!");
@@ -36,6 +37,7 @@ angular.module('angularjsApp')
             }
             else{
                 //Username and/or password not input   
+				$location.path("#");
             }
-}
+		}
   });
