@@ -17,13 +17,13 @@
 <div class="row fullWidth">
 	<div class="large-12 columns">
 		<slick class="slider single-item" id="slick-slider" current-index="index" responsive="breakpoints" slides-to-show=5 slides-to-scroll=5 ng-controller="SlickCtrl" dots=true centerMode=true>
-			<div class="slide-container" ng-repeat="picture in pictures">
-				<p class="panel dinnerTitle">Matrett</p>
+			<div class="slide-container" ng-repeat="recipe in recipes">
+				<p class="panel dinnerTitle">{{recipe[0]}}</p>
 				<div class="overlay-container">
-					<img class="dinnerImage" src="/images/{{picture}}"></img>
+					<img class="dinnerImage" src="{{recipe[2]}}"></img>
 					<div class="overlay">+</div>
 				</div>
-				<p class="panel dinnerDescription">Beskrivelse av matretten?</p>
+				<p class="panel dinnerDescription">{{recipe[1]}}</p>
 			</div>
 		</slick>
 	</div>

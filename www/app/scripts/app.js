@@ -25,7 +25,7 @@ app.run(function($rootScope) {
     	});
         
         $rootScope.isLoggedIn = function(){
-            return false;
+            return true;
         }
         
 	});
