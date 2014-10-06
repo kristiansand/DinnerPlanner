@@ -42,6 +42,18 @@ app.run(function($rootScope, $cookies, $cookieStore) {
             }
         }
         
+        if (typeof $cookieStore.get('recipeList') != 'undefined'){
+            $rootScope.recipeList = $cookieStore.get('recipeList');
+        }
+        else{
+            $rootScope.recipeList = [];   
+        }
+    
+        $rootScope.addToList = function (recipe){
+            alert('"' + recipe + '" added to list');
+            $rootScope.recipeList.push(recipe);
+            $cookieStore.put('recipeList', $rootScope.recipeList);
+        }
         
         $rootScope.selectStoreBranding();
         

@@ -8,7 +8,7 @@
  * Controller of the angularjsApp
  */
 angular.module('angularjsApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $cookies, $cookieStore) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -41,6 +41,7 @@ angular.module('angularjsApp')
       
       $scope.recipes = [];
       
+      
       $scope.getRecipes = function(){
         var recipes = [];
         //selectboxes
@@ -48,6 +49,20 @@ angular.module('angularjsApp')
           
         var Recipe = Parse.Object.extend("Recipe");
         var recipesQuery = new Parse.Query(Recipe);
+        
+        // henter oppskrifter unike for butikken
+        if (typeof $cookieStore.get("store") != 'undefined'){
+            var otherStore = "";
+            // Kiwi
+            if($cookieStore.get("store") === "phlvMiXLfG"){
+                   otherStore = "Dvjkwy8fec"; // Rema 1000
+            }
+            else if($cookieStore.get("store") === "Dvjkwy8fec"){
+                otherStore = "phlvMiXLfG";
+            }
+            recipesQuery.notEqualTo("store", otherStore);  
+        }
+        
         if (typeof $scope.foodCategorySelected != 'undefined'){
             recipesQuery.equalTo("category", $scope.foodCategorySelected);
         }
@@ -66,7 +81,7 @@ angular.module('angularjsApp')
             // Do something with the returned Parse.Object values
             for (var i = 0; i < results.length; i++) { 
               var object = results[i];
-                var objectArray = [object.get('name'), object.get('description'), object.get('image').url()];
+                var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id];
               $scope.recipes.push(objectArray);
             }
           },
@@ -92,7 +107,6 @@ angular.module('angularjsApp')
       }
       $scope.priceSelect = function(selected) {
              $scope.priceSelected = selected.id;
-          alert(selected.id);
             $scope.getRecipes();
       }
       
