@@ -18,8 +18,6 @@ angular.module('angularjsApp')
       $scope.loginStr = "Log in";
       $scope.usernameStr = "Username";
       $scope.passwordStr = "Password";
-        
-	console.log($cookieStore.get("store"));
       
       $scope.logIn = function(){
           var username = document.getElementById("username").value;

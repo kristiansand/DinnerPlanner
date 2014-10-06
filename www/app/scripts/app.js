@@ -55,6 +55,11 @@ app.run(function($rootScope, $cookies, $cookieStore) {
             $cookieStore.put('recipeList', $rootScope.recipeList);
         }
         
+        $rootScope.emptyList = function (){
+            $rootScope.recipeList = [];
+            alert("List is now empty");
+        }
+        
         $rootScope.selectStoreBranding();
         
         $rootScope.isLoggedIn = function(){

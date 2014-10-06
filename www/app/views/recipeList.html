@@ -1,6 +1,8 @@
 <div class="row">
     <h1>{{recipeListStr}}</h1>
-    <div ng-repeat="recipe in recipeList">
-        <p>{{recipe}}</p>
-    </div>
+        <accordion-group ng-repeat="recipe in recipeList" heading="{{recipe}}">
+           Ingredients
+        </accordion-group>
+    <a href="#" class="button" ng-click="emptyList()">Empty list</a>
 </div>
+
