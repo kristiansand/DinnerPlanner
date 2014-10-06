@@ -2,9 +2,18 @@
   	<div class="large-12 columns">
 	  	<ul class="checkboxes">
             <div class="checkboxFoodCategories">
-                <input type="checkbox" class="checkboxLabel" id="checkboxLabel0"/><label for="checkboxLabel0">Meat</label>
-                <input type="checkbox" class="checkboxLabel" id="checkboxLabel1"/><label for="checkboxLabel1">Vegetables</label>
-                <input type="checkbox" class="checkboxLabel" id="checkboxLabel2"/><label for="checkboxLabel2">Sides</label>
+                <select ng-model="foodCategorySelected" ng-change="foodCategorySelect(foodCategories[foodCategorySelected-1])" ng-options="foodCategory.id as foodCategory.name for foodCategory in foodCategories">
+                    <option value="">-- choose food category --</option>
+                </select>
+                <select ng-model="timeSpentSelected" ng-change="timeSpentSelect(timeSpent[timeSpentSelected-1])" ng-options="timeSpentS.id as timeSpentS.name for timeSpentS in timeSpent">
+                    <option value="">-- choose time spent --</option>
+                </select>
+                <select ng-model="difficultySelected" ng-change="difficultySelect(difficulty[difficultySelected-1])" ng-options="difficultyS.id as difficultyS.name for difficultyS in difficulty">
+                    <option value="">-- choose difficulty --</option>
+                </select>
+                <select ng-model="priceSelected" ng-change="priceSelect(price[priceSelected-1])" ng-options="priceS.id as priceS.name for priceS in price">
+                    <option value="">-- choose price category --</option>
+                </select>
             </div>
 	  	</ul>
   	</div>
