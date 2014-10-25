@@ -8,13 +8,13 @@
  * Controller of the DinnerPlanner
  */
 angular.module('DinnerPlanner')
-  .controller('RecipeListCtrl', function ($scope, $cookies, $cookieStore, $location) {
+  	.controller('RecipeListCtrl', function ($scope, $cookies, $cookieStore, $location) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma',
     ];
-      // Strings
-      $scope.recipeListStr = "Recipe list";
+  	// Strings
+  	$scope.recipeListStr = "Recipe list";
 
   });
