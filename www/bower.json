@@ -11,11 +11,11 @@
     "angular-foundation": "~0.3.1",
     "modernizr": "~2.8.3",
     "fastclick": "~1.0.3",
-    "angular-slick": "~0.1.11",
     "foundation": "~5.4.5",
     "angular-cookies": "~1.2.0",
     "angular-ui-router": "~0.2.11",
-    "ngDialog": "~0.3.2"
+    "ngDialog": "~0.3.2",
+    "idangerous-swiper": "~2.7.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

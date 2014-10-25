@@ -46,51 +46,14 @@ ul.checkboxes {
 }
 
 
-/* MAIN VIEW SLIDER */
-#slick-slider {
-	
+
+...
+/* Specify Swiper's Size: */
+.swiper-container, .swiper-slide {
+  width: 500px;
+  height: 200px;
 }
 
-.slick-prev, .slick-next {
-}
-
-.slick-prev:before, .slick-next:before {
-	color: black;
-}
-.slide-container {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-.slick-track img {
-	border:1px solid #;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;  
-}
-.slick-track img:hover {
-	-moz-box-shadow: 0 0 30px black;
-	-webkit-box-shadow: 0 0 30px black;
-	box-shadow: 0 0 30px black;
-}
-
-
-
-/* IMAGE OVERLAY */
-.overlay-container {
-	position: relative; /* <-- Set as the reference for the positioned overlay */
-}
-
-.overlay-container .overlay {
-	position: absolute; /* <-- Remove the overlay from normal flow         */
-	bottom: 0;          /* <-- Keep the overlay at the bottom of the box   */
-	left: 0;            /* <-- Set left and right properties to 0          */
-	right: 0;           /*     In order to expand the overlay horizontally */
-	width: 25px;
-	height: 30px;
-
-	padding: 0.4rem;
-	background-color: rgba(255, 255, 255, 0.7);
-}
 
 
 /* DINNER TITLE */

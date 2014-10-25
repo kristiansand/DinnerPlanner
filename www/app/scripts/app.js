@@ -11,7 +11,6 @@
 var app = angular.module('DinnerPlanner', [
 	    'mm.foundation',
 	    'ngRoute',
-	    'slick',
         'ngCookies',
         'ngDialog'
 	]);
@@ -36,6 +35,18 @@ app.run(function($rootScope, $cookies, $cookieStore) {
                 FastClick.attach(document.body);
             });
 	        $(document).foundation();
+            /*
+            Or with jQuery/Zepto
+            */
+            $(function(){
+              var mySwiper = $('.swiper-container').swiper({
+                //Your options here:
+                mode:'horizontal',
+                loop: true
+                //etc..
+              });
+            })
+            
     	});
         $rootScope.title = "DinnerPlanner";
     
