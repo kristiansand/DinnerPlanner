@@ -14,10 +14,12 @@ angular.module('angularjsApp')
       'AngularJS',
       'Karma',
     ];
+    
     // Strings
     $scope.loginStr = "Log in";
     $scope.usernameStr = "Username";
     $scope.passwordStr = "Password";
+
 
     var openDialog = function(templateId){
         ngDialog.open({ 
@@ -25,9 +27,9 @@ angular.module('angularjsApp')
             scope: $scope 
         });
     };
-
     $scope.errors = [];
       
+
     $scope.logIn = function(){
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;

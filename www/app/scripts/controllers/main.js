@@ -8,41 +8,52 @@
  * Controller of the angularjsApp
  */
 angular.module('angularjsApp')
-  .controller('MainCtrl', function ($scope, $cookies, $cookieStore) {
+    .controller('MainCtrl', function ($scope, $cookies, $cookieStore, ngDialog) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-      //Select boxes
-      $scope.foodCategories = [
-          {id: 1, name: 'Meat'},
-          {id: 2, name: 'Fish'},
-          {id: 3, name: 'Veg'}
-      ];
+
+
+    var openDialog = function(templateId){
+        ngDialog.open({ 
+            template: templateId,
+            scope: $scope 
+        });
+    };
+    $scope.errors = [];
+
+
+    //Select boxes
+    $scope.foodCategories = [
+        {id: 1, name: 'Meat'},
+        {id: 2, name: 'Fish'},
+        {id: 3, name: 'Veg'}
+    ];
+
+    $scope.timeSpent = [
+        {id: 1, name: 'Quick'},
+        {id: 2, name: 'Medium'},
+        {id: 3, name: 'Slow'}
+    ];
+
+    $scope.difficulty = [
+        {id: 1, name: 'Easy'},
+        {id: 2, name: 'Medium'},
+        {id: 3, name: 'Difficult'}
+    ];
+
+    $scope.price = [
+        {id: 1, name: 'Cheap'},
+        {id: 2, name: 'Medium'},
+        {id: 3, name: 'Expensive'}
+    ];
       
-      $scope.timeSpent = [
-          {id: 1, name: 'Quick'},
-          {id: 2, name: 'Medium'},
-          {id: 3, name: 'Slow'}
-      ];
-      
-      $scope.difficulty = [
-          {id: 1, name: 'Easy'},
-          {id: 2, name: 'Medium'},
-          {id: 3, name: 'Difficult'}
-      ];
-      
-      $scope.price = [
-          {id: 1, name: 'Cheap'},
-          {id: 2, name: 'Medium'},
-          {id: 3, name: 'Expensive'}
-      ];
-      
-      $scope.recipes = [];
+    $scope.recipes = [];
       
       
-      $scope.getRecipes = function(){
+    $scope.getRecipes = function(){
         var recipes = [];
         //selectboxes
         //alert($scope.foodCategorySelected + " " + $scope.timeSpentSelected + " " + $scope.difficultySelected + " " + $scope.priceSelected);
@@ -76,41 +87,42 @@ angular.module('angularjsApp')
             recipesQuery.equalTo("price", $scope.priceSelected);
         }
         recipesQuery.find({
-          success: function(results) {
-              $scope.recipes.length = 0;
-            // Do something with the returned Parse.Object values
-            for (var i = 0; i < results.length; i++) { 
-              var object = results[i];
-                var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id];
-              $scope.recipes.push(objectArray);
+            success: function(results) {
+                $scope.recipes.length = 0;
+                // Do something with the returned Parse.Object values
+                for (var i = 0; i < results.length; i++) { 
+                    var object = results[i];
+                    var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id];
+                    $scope.recipes.push(objectArray);
+                }
+            },
+            error: function(error) {
+                $scope.errors.push("Error: " + error.code + " " + error.message);
+                openDialog('dialogs/errorDialog.html');
             }
-          },
-          error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-          }
         });
 
-      }
+    }
       
-      // select boxes functions
-      $scope.foodCategorySelect = function(selected) {
-             $scope.foodCategorySelected = selected.id;
-            $scope.getRecipes();
-      }
-      $scope.timeSpentSelect = function(selected) {
-             $scope.timeSpentSelected = selected.id;
-            $scope.getRecipes();
-      }
-      $scope.difficultySelect = function(selected) {
-             $scope.difficultySelected = selected.id;
-            $scope.getRecipes();
-      }
-      $scope.priceSelect = function(selected) {
-             $scope.priceSelected = selected.id;
-            $scope.getRecipes();
-      }
+    // select boxes functions
+    $scope.foodCategorySelect = function(selected) {
+        $scope.foodCategorySelected = selected.id;
+        $scope.getRecipes();
+    }
+    $scope.timeSpentSelect = function(selected) {
+        $scope.timeSpentSelected = selected.id;
+        $scope.getRecipes();
+    }
+    $scope.difficultySelect = function(selected) {
+        $scope.difficultySelected = selected.id;
+        $scope.getRecipes();
+    }
+    $scope.priceSelect = function(selected) {
+        $scope.priceSelected = selected.id;
+        $scope.getRecipes();
+    }
       
       
-      $scope.getRecipes();
+    $scope.getRecipes();
       
-  });
+});
