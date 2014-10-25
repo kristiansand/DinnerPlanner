@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angularjsApp.controller:MainCtrl
+ * @name DinnerPlanner.controller:SlickCtrl
  * @description
- * # MainCtrl
- * Controller of the angularjsApp
+ * # SlickCtrl
+ * Controller of the DinnerPlanner
  */
-angular.module('angularjsApp')
+angular.module('DinnerPlanner')
   .controller('SlickCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
