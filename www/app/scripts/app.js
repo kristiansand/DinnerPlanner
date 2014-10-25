@@ -12,7 +12,8 @@ var app = angular.module('angularjsApp', [
 	    'mm.foundation',
 	    'ngRoute',
 	    'slick',
-        'ngCookies'
+        'ngCookies',
+        'ngDialog'
 	]);
 
 app.config(['$routeProvider', 
