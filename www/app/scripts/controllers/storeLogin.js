@@ -25,6 +25,8 @@ angular.module('angularjsApp')
             scope: $scope 
         });
     };
+
+    $scope.errors = [];
       
     $scope.logIn = function(){
         var username = document.getElementById("username").value;
@@ -36,19 +38,19 @@ angular.module('angularjsApp')
                         $cookieStore.put("store", user.get("store").id);
                         $location.path("/home");                        
                     } else {
-                        $scope.error = "Du er ikke logget inn! Kunne ikke finne butikk registrert på ditt bruker.";
+                        $scope.errors.push("Du er ikke logget inn! Kunne ikke finne butikk registrert på ditt bruker.");
                         openDialog('dialogs/errorDialog.html');
                     }
                 },
                 error: function(user, error) {
-                    $scope.error = "Du er ikke logget inn! Det må være noe feil med brukernavn og passord.";
+                    $scope.errors = "Du er ikke logget inn! Det må være noe feil med brukernavn og passord.";
                     openDialog('dialogs/errorDialog.html');
                 }
             });
         }
         else{
             //Username and/or password not input 
-            $scope.error = "Brukernavn og passord må fylles inn";  
+            $scope.errors.push("Brukernavn og passord må fylles inn");
     		openDialog('dialogs/errorDialog.html');
         }
     };
