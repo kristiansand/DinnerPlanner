@@ -95,6 +95,7 @@ angular.module('DinnerPlanner')
                     var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id];
                     $scope.recipes.push(objectArray);
                 }
+                console.log("Sucess")
             },
             error: function(error) {
                 $scope.errors.push("Error: " + error.code + " " + error.message);
@@ -120,9 +121,5 @@ angular.module('DinnerPlanner')
     $scope.priceSelect = function(selected) {
         $scope.priceSelected = selected.id;
         $scope.getRecipes();
-    }
-      
-      
-    $scope.getRecipes();
-      
+    }      
 });
