@@ -15,6 +15,19 @@ var app = angular.module('angularjsApp', [
         'ngCookies'
 	]);
 
+app.config(['$routeProvider', 
+    function ($routeProvider) {
+        $routeProvider.when('/', {
+            templateUrl: 'views/storeLogin.html',
+            controller: 'StoreLoginCtrl'
+        }).
+        when('/home', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        }).
+        otherwise({ redirectTo: '/' });    
+}]);
+
 app.run(function($rootScope, $cookies, $cookieStore) {
             parseInitialize();
 	        $rootScope.$on('$viewContentLoaded', function () {
@@ -68,6 +81,6 @@ app.run(function($rootScope, $cookies, $cookieStore) {
         
 	});
 
-function parseInitialize(){
-    Parse.initialize("KJ7VlLWVQDlpbksXpY4cCgJRWq0jzl8HlXodhRJm", "oOTlG5iSxkBTzIraN6OJuFdPGYhOvcrKM2wVrdhF");   
+    function parseInitialize(){
+        Parse.initialize("KJ7VlLWVQDlpbksXpY4cCgJRWq0jzl8HlXodhRJm", "oOTlG5iSxkBTzIraN6OJuFdPGYhOvcrKM2wVrdhF");   
 }
