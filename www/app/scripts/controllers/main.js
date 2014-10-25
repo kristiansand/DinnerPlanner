@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name angularjsApp.controller:MainCtrl
+ * @name DinnerPlanner.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the angularjsApp
+ * Controller of the DinnerPlanner
  */
-angular.module('angularjsApp')
+angular.module('DinnerPlanner')
     .controller('MainCtrl', function ($scope, $cookies, $cookieStore, ngDialog) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

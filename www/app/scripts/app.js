@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc overview
- * @name angularjsApp
+ * @name DinnerPlanner
  * @description
- * # angularjsApp
+ * # DinnerPlanner
  *
  * Main module of the application.
  */
-var app = angular.module('angularjsApp', [
+var app = angular.module('DinnerPlanner', [
 	    'mm.foundation',
 	    'ngRoute',
 	    'slick',
