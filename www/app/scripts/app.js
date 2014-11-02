@@ -11,7 +11,6 @@
 var app = angular.module('DinnerPlanner', [
 	    'mm.foundation',
 	    'ngRoute',
-	    'slick',
         'ngCookies',
         'ngDialog'
 	]);

@@ -50,11 +50,10 @@ angular.module('DinnerPlanner')
         {id: 3, name: 'Expensive'}
     ];
       
-    $scope.recipes = [];
+    
       
       
     $scope.getRecipes = function(){
-        var recipes = [];
         //selectboxes
         //alert($scope.foodCategorySelected + " " + $scope.timeSpentSelected + " " + $scope.difficultySelected + " " + $scope.priceSelected);
           
@@ -88,6 +87,7 @@ angular.module('DinnerPlanner')
         }
         recipesQuery.find({
             success: function(results) {
+                $scope.recipes = [];
                 $scope.recipes.length = 0;
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) { 
@@ -121,5 +121,8 @@ angular.module('DinnerPlanner')
     $scope.priceSelect = function(selected) {
         $scope.priceSelected = selected.id;
         $scope.getRecipes();
-    }      
+    }
+
+    $scope.getRecipes();
+
 });

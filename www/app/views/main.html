@@ -26,20 +26,13 @@
 
 
 <br />
-<div class="row fullWidth" ng-init="getRecipes()">
-	<div class="large-12 columns">
-		<slick class="slider single-item" id="slick-slider" current-index="index" responsive="breakpoints" 
-        slides-to-show=5 slides-to-scroll=5 ng-controller="SlickCtrl" dots=true centerMode=true>
-			<div ng-repeat="recipe in recipes">
-                <div class="slide-container">
-                    <p class="panel dinnerTitle">{{recipe[0]}}</p>
-                    <div class="overlay-container">
-                        <img class="dinnerImage" src="{{recipe[2]}}"></img>
-                        <div class="overlay"><a href="#" class="button tiny round" ng-click="addToList(recipe[0])">+</a></div>
-                    </div>
-                    <p class="panel dinnerDescription">{{recipe[1]}}</p>
-                </div>
-			</div>
-		</slick>
-	</div>
+
+
+<div ng-repeat="recipe in recipes" ng-init="getRecipes()">
+    <p class="panel dinnerTitle">{{recipe[0]}}</p>
+    <div class="overlay-container">
+        <img class="dinnerImage" src="{{ recipe[2] }}"></img>
+        <div class="overlay"><a href="#" class="button tiny round" ng-click="addToList(recipe[0])">+</a></div>
+    </div>
+    <p class="panel dinnerDescription">{{recipe[1]}}</p>
 </div>
