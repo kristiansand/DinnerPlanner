@@ -27,12 +27,17 @@
 
 <br />
 
-
-<div ng-repeat="recipe in recipes" ng-init="getRecipes()">
-    <p class="panel dinnerTitle">{{recipe[0]}}</p>
-    <div class="overlay-container">
-        <img class="dinnerImage" src="{{ recipe[2] }}"></img>
-        <div class="overlay"><a href="#" class="button tiny round" ng-click="addToList(recipe[0])">+</a></div>
-    </div>
-    <p class="panel dinnerDescription">{{recipe[1]}}</p>
+<div class="row">
+        <div ng-repeat="recipe in recipes" ng-init="getRecipes()">
+            
+    <div class="large-4 column">
+            <p class="panel dinnerTitle">{{recipe[0]}}</p>
+            <div class="overlay-container">
+                <img class="dinnerImage" src="{{ recipe[2] }}"></img>
+                <div class="overlay"><a href="#" class="button tiny round" ng-click="addToList(recipe[0])">+</a></div>
+            </div>
+            
+            <p class="panel dinnerDescription">{{recipe[1]}}</p>
+        </div>
+        </div>
 </div>
