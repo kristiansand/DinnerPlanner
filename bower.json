@@ -1,0 +1,18 @@
+{
+  "name": "DinnerPlanner",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kristiansand/DinnerPlanner",
+  "authors": [
+    "Othamar",
+    "Sallaup"
+  ],
+  "main": "app/styles/main.css",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -37,23 +37,23 @@ angular.module('DinnerPlanner')
             Parse.User.logIn(username, password, {
                 success: function(user) {
                     if(user.get("store").id != null) {
-                        $cookieStore.put("store", user.get("store").id);
-                        $location.path("/home");                        
+                        localStorage.setItem("store", user.get("store").id);
+                        location.replace("main.html");                        
                     } else {
-                        $scope.errors.push("Du er ikke logget inn! Kunne ikke finne butikk registrert på ditt bruker.");
-                        openDialog('dialogs/errorDialog.html');
+                        alert("Du er ikke logget inn! Kunne ikke finne butikk registrert på ditt bruker.");
+                        //openDialog('dialogs/errorDialog.html');
                     }
                 },
                 error: function(user, error) {
-                    $scope.errors = "Du er ikke logget inn! Det må være noe feil med brukernavn og passord.";
-                    openDialog('dialogs/errorDialog.html');
+                    alert("Du er ikke logget inn! Det må være noe feil med brukernavn og passord.");
+                    //openDialog('dialogs/errorDialog.html');
                 }
             });
         }
         else{
             //Username and/or password not input 
-            $scope.errors.push("Brukernavn og passord må fylles inn");
-    		openDialog('dialogs/errorDialog.html');
+            alert("Brukernavn og passord må fylles inn");
+    		//openDialog('dialogs/errorDialog.html');
         }
     };
 });

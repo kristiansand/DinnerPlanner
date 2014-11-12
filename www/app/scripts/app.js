@@ -9,37 +9,23 @@
  * Main module of the application.
  */
 var app = angular.module('DinnerPlanner', [
-	    'mm.foundation',
-	    'ngRoute',
+        'mm.foundation',
         'ngCookies',
         'ngDialog'
-	]);
+    ]);
 
-app.config(['$routeProvider', 
-    function ($routeProvider) {
-        $routeProvider.when('/', {
-            templateUrl: 'views/storeLogin.html',
-            controller: 'StoreLoginCtrl'
-        }).
-        when('/home', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
-        }).
-        otherwise({ redirectTo: '/' });    
-}]);
-
-app.run(function($rootScope, $cookies, $cookieStore) {
+app.run(function($rootScope) {
             parseInitialize();
-	        $rootScope.$on('$viewContentLoaded', function () {
-        	$(function() {
+            $rootScope.$on('$viewContentLoaded', function () {
+            $(function() {
                 FastClick.attach(document.body);
             });
-	        $(document).foundation();
-    	});
+            $(document).foundation();
+        });
         $rootScope.title = "DinnerPlanner";
     
         $rootScope.selectStoreBranding = function(){
-            var storeCookie = $cookieStore.get("store");
+            var storeCookie = localStorage.getItem("store");
             // Rema 1000
             if(storeCookie === "Dvjkwy8fec"){
                 $rootScope.title += " Rema 1000";
@@ -55,8 +41,8 @@ app.run(function($rootScope, $cookies, $cookieStore) {
             }
         }
         
-        if (typeof $cookieStore.get('recipeList') != 'undefined'){
-            $rootScope.recipeList = $cookieStore.get('recipeList');
+        if (typeof localStorage.getItem('recipeList') != null){
+            $rootScope.recipeList = localStorage.getItem('recipeList');
         }
         else{
             $rootScope.recipeList = [];   
@@ -65,7 +51,7 @@ app.run(function($rootScope, $cookies, $cookieStore) {
         $rootScope.addToList = function (recipe){
             alert('"' + recipe + '" added to list');
             $rootScope.recipeList.push(recipe);
-            $cookieStore.put('recipeList', $rootScope.recipeList);
+            localStorage.setItem('recipeList', $rootScope.recipeList);
         }
         
         $rootScope.emptyList = function (){
@@ -79,7 +65,7 @@ app.run(function($rootScope, $cookies, $cookieStore) {
             return true;
         }
         
-	});
+    });
 
     function parseInitialize(){
         Parse.initialize("KJ7VlLWVQDlpbksXpY4cCgJRWq0jzl8HlXodhRJm", "oOTlG5iSxkBTzIraN6OJuFdPGYhOvcrKM2wVrdhF");   
