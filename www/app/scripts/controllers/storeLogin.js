@@ -56,4 +56,12 @@ angular.module('DinnerPlanner')
     		//openDialog('dialogs/errorDialog.html');
         }
     };
+      
+      $scope.isLoggedIn = function(){
+            return localStorage.getItem("store")!= null;
+        }
+      
+      if($scope.isLoggedIn()){
+            location.replace("main.html");   
+        }
 });

@@ -8,7 +8,7 @@
  * Controller of the DinnerPlanner
  */
 angular.module('DinnerPlanner')
-    .controller('MainCtrl', function ($scope, $cookies, $cookieStore, ngDialog) {
+    .controller('MainCtrl', function ($scope, $cookies, $cookieStore, ngDialog, $sce) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -85,6 +85,7 @@ angular.module('DinnerPlanner')
         if (typeof $scope.priceSelected != 'undefined'){
             recipesQuery.equalTo("price", $scope.priceSelected);
         }
+        recipesQuery.limit(3);
         recipesQuery.find({
             success: function(results) {
                 $scope.recipes = [];
@@ -92,7 +93,7 @@ angular.module('DinnerPlanner')
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) { 
                     var object = results[i];
-                    var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id];
+                    var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id, $sce.trustAs("html", object.get('Ingredients')), object.get('sponsored')];
                     $scope.recipes.push(objectArray);
                 }
                 console.log("Sucess")
@@ -124,5 +125,13 @@ angular.module('DinnerPlanner')
     }
 
     $scope.getRecipes();
+        
+    $scope.isLoggedIn = function(){
+        return localStorage.getItem("store")!= null;
+    }
+
+    if(!$scope.isLoggedIn()){
+        location.replace("index.html");   
+    } 
 
 });

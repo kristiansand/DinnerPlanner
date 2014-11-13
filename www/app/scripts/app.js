@@ -14,7 +14,7 @@ var app = angular.module('DinnerPlanner', [
         'ngDialog'
     ]);
 
-app.run(function($rootScope) {
+app.run(function($rootScope, $sce) {
             parseInitialize();
             $rootScope.$on('$viewContentLoaded', function () {
             $(function() {
@@ -41,28 +41,31 @@ app.run(function($rootScope) {
             }
         }
         
-        if (typeof localStorage.getItem('recipeList') != null){
+        if (localStorage.getItem('recipeList') != null){
             $rootScope.recipeList = localStorage.getItem('recipeList');
+            $rootScope.recipeListSafe = $sce.trustAsHtml($rootScope.recipeList);
         }
         else{
-            $rootScope.recipeList = [];   
+            $rootScope.recipeList = "";   
         }
     
-        $rootScope.addToList = function (recipe){
+        $rootScope.addToList = function (recipe, ingredients){
             alert('"' + recipe + '" added to list');
-            $rootScope.recipeList.push(recipe);
+            $rootScope.recipeList += ("<h4>" + recipe + "</h4>" + ingredients + "<br/>");
             localStorage.setItem('recipeList', $rootScope.recipeList);
         }
         
         $rootScope.emptyList = function (){
+            localStorage.removeItem("recipeList");
             $rootScope.recipeList = [];
             alert("List is now empty");
         }
         
         $rootScope.selectStoreBranding();
-        
-        $rootScope.isLoggedIn = function(){
-            return true;
+    
+        $rootScope.logOut = function (){
+            localStorage.removeItem("store");
+            location.replace("index.html");
         }
         
     });

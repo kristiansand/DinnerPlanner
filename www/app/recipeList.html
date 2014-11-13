@@ -55,6 +55,7 @@
 						<!-- Left Nav Section -->
 						<ul class="left">
 							<li><a ng-click="logOut()">Log out</a></li>
+							<li><a href="main.html">Back</a></li>
 						</ul>
 					</top-bar-section>
 				</top-bar>
@@ -64,55 +65,21 @@
 			
 			<br /><br />
 			<!-- CONTENT -->
-            <ng-view ng-controller="MainCtrl">
+            <ng-view ng-controller="RecipeListCtrl">
             
                 
-                
-                <div class="row" class="checkboxes">
-  	<div class="large-12 columns">
-	  	<ul class="checkboxes">
-            <div class="checkboxFoodCategories">
-                <form>
-                <select ng-model="foodCategorySelected" ng-change="foodCategorySelect(foodCategories[foodCategorySelected-1])" ng-options="foodCategory.id as foodCategory.name for foodCategory in foodCategories">
-                    <option value="">-- choose food category --</option>
-                </select>
-                <select ng-model="timeSpentSelected" ng-change="timeSpentSelect(timeSpent[timeSpentSelected-1])" ng-options="timeSpentS.id as timeSpentS.name for timeSpentS in timeSpent">
-                    <option value="">-- choose time spent --</option>
-                </select>
-                <select ng-model="difficultySelected" ng-change="difficultySelect(difficulty[difficultySelected-1])" ng-options="difficultyS.id as difficultyS.name for difficultyS in difficulty">
-                    <option value="">-- choose difficulty --</option>
-                </select>
-                <select ng-model="priceSelected" ng-change="priceSelect(price[priceSelected-1])" ng-options="priceS.id as priceS.name for priceS in price">
-                    <option value="">-- choose price category --</option>
-                </select>
-                    <input type="reset">
-                    </form>
-            </div>
-	  	</ul>
-  	</div>
+ 
+                <div class="row">
+    <div class="row">
+    <h1>{{recipeListStr}}</h1>
+    <p ng-bind-html="recipeListSafe"></p>
+    <br/><a href="#" class="button" ng-click="emptyList()">Empty list</a>
 </div>
 
-<hr />
 
-
-<br />
-
-<div class="row">
-        <div ng-repeat="recipe in recipes" ng-init="getRecipes()">
-            
-    <div class="large-4 column">
-            <p class="panel dinnerTitle">{{recipe[0]}}<i> {{recipe[5]}}</i></p>
-            <div class="overlay-container">
-                <img class="dinnerImage" src="{{ recipe[2] }}"></img>
-                <div class="overlay"><a href="#" class="button tiny round" ng-click="addToList(recipe[0], recipe[4])">+</a></div>
-            </div>
-            
-            <p class="panel dinnerDescription">{{recipe[1]}}</p>
-            <p class="panel" ng-bind-html="recipe[4]"></p>
-        </div>
-        </div>
 </div>
-                
+
+
                 
                 
                 

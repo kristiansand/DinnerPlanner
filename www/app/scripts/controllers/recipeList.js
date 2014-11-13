@@ -16,5 +16,14 @@ angular.module('DinnerPlanner')
     ];
   	// Strings
   	$scope.recipeListStr = "Recipe list";
+        
+        
+     $scope.isLoggedIn = function(){
+        return localStorage.getItem("store")!= null;
+    }
+
+    if(!$scope.isLoggedIn()){
+        location.replace("index.html");   
+    } 
 
   });
