@@ -59,6 +59,7 @@ app.run(function($rootScope, $sce) {
             localStorage.removeItem("recipeList");
             $rootScope.recipeList = [];
             alert("List is now empty");
+            location.reload();
         }
         
         $rootScope.selectStoreBranding();
