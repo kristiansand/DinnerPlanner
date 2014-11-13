@@ -29,12 +29,12 @@ app.run(function($rootScope, $sce) {
             // Rema 1000
             if(storeCookie === "Dvjkwy8fec"){
                 $rootScope.title += " Rema 1000";
-                document.body.style.background = '#004a93';
+                //document.body.style.background = '#004a93';
             }
             // Kiwi
             else if(storeCookie === "phlvMiXLfG"){
                 $rootScope.title += " Kiwi";
-                document.body.style.background = '#84c115';
+                //document.body.style.background = '#84c115';
             }
             else{
                 console.log("error: " + storeCookie);   

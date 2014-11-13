@@ -101,12 +101,12 @@
         <div ng-repeat="recipe in recipes" ng-init="getRecipes()">
             
     <div class="large-4 column">
-            <p class="panel dinnerTitle">{{recipe[0]}}<i> {{recipe[5]}}</i></p>
+            <p class="panel dinnerTitle">{{recipe[0]}}</p>
             <div class="overlay-container">
                 <img class="dinnerImage" src="{{ recipe[2] }}"></img>
                 <div class="overlay"><a href="#" class="button tiny round" ng-click="addToList(recipe[0], recipe[4])">+</a></div>
             </div>
-            
+            <p ng-bind-html="recipe[5]"></p>
             <p class="panel dinnerDescription">{{recipe[1]}}</p>
             <p class="panel" ng-bind-html="recipe[4]"></p>
         </div>

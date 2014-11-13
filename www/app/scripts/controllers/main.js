@@ -93,7 +93,7 @@ angular.module('DinnerPlanner')
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) { 
                     var object = results[i];
-                    var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id, $sce.trustAs("html", object.get('Ingredients')), object.get('sponsored')];
+                    var objectArray = [object.get('name'), object.get('description'), object.get('image').url(), object.id, $sce.trustAs("html", object.get('Ingredients')), $sce.trustAs("html", object.get('sponsored'))];
                     $scope.recipes.push(objectArray);
                 }
                 console.log("Sucess")
