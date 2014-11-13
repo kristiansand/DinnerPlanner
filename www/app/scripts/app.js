@@ -23,18 +23,22 @@ app.run(function($rootScope, $sce) {
             $(document).foundation();
         });
         $rootScope.title = "DinnerPlanner";
+        $rootScope.ads = "";
     
         $rootScope.selectStoreBranding = function(){
             var storeCookie = localStorage.getItem("store");
             // Rema 1000
             if(storeCookie === "Dvjkwy8fec"){
-                $rootScope.title += " Rema 1000";
-                //document.body.style.background = '#004a93';
+                $rootScope.title += " Rema 1000";     
+                $rootScope.ads = $sce.trustAsHtml('<img src="images/rema100ad.jpg"/>');
+                
+                document.body.style.background = '#004a93';
             }
             // Kiwi
             else if(storeCookie === "phlvMiXLfG"){
                 $rootScope.title += " Kiwi";
-                //document.body.style.background = '#84c115';
+                document.body.style.background = '#84c115';
+                $rootScope.ads = $sce.trustAsHtml('<img src="images/kiwiad.png"/>');
             }
             else{
                 console.log("error: " + storeCookie);   
